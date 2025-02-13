@@ -25,7 +25,7 @@ st.title("🩺 BOT Recurrence Prediction Tool")
 st.markdown(
     """
     Welcome to the **BOT Recurrence Prediction Tool**. 
-    This tool predicts the probability of BOT Recurrence based on clinical input variables. 
+    This tool predicts the probability of BOT recurrence based on clinical input variables. 
     Please fill in the required inputs or upload a CSV file for batch predictions.
     """
 )
