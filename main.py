@@ -48,7 +48,7 @@ titles_options = {
     "Family Cancer History": {0: "No", 1: "Yes"},
     "Sexual History": {0: "No", 1: "Yes"},
     "Parity": {0: "No", 1: "Yes"},
-    "Menopausal Status": {0: "Premenopausal", 1: "Postmenopausal"},
+    "Menopausal Status": {0: "No", 1: "Yes"},
     "Comorbidities": {0: "No", 1: "Yes"},
     "Presenting Symptom": {1: "Abdominal pain, bloating", 2: "Physical examination reveals", 3: "Abnormal bleeding, irregular bleeding"},
     "Surgical Route": {0: "Laparotomy", 1: "Laparoscope"},
@@ -62,7 +62,7 @@ titles_options = {
     "Microinfiltration": {0: "No", 1: "Yes"},
     "Psammoma Bodies and Calcification": {0: "No", 1: "Yes"},
     "Peritoneal Implantation": {0: "No", 1: "Yes"},
-    "Ascites Cytology": {0: "Negative", 1: "Positive"},
+    "Ascites Cytology": {0: "Not found", 1: "Found"},
     "FIGO Staging": {1: "Stage I", 2: "Stage II", 3: "Stage III", },
     "Unilateral or Bilateral": {0: "Unilateral", 1: "Bilateral"},
     "CA125": {0: "Normal", 1: "Abnormal"},
@@ -75,7 +75,7 @@ titles_options = {
     "Receive Estrogens": {0: "No", 1: "Yes"},
     "Ovulation Induction": {0: "No", 1: "Yes"},
     "Postoperative Adjuvant Therapy": {0: "No", 1: "Yes"},
-    "Type of Lesion": {0: "Serous", 1: "Mucinous"},
+    "Type of Lesion": {0: "endogenous", 1: "exogenous"},
     "Papillary Area Ratio": {0: "≤50%", 1: ">50%"}
 }
 
@@ -91,7 +91,7 @@ if st.button("Predict Single Case"):
     prob = predict_single(input_features)
     st.markdown("### 🧐 **Prediction Result**")
     st.markdown(
-        f"<h2 style='color:#FF6F61; text-align:center;'>**Predicted Pregnancy Outcome Probability**: **{prob:.2f}**</h2>",
+        f"<h2 style='color:#FF6F61; text-align:center;'>**Predicted BOT recurrence Outcome Probability**: **{prob:.2f}**</h2>",
         unsafe_allow_html=True)
 
 # 批量预测
