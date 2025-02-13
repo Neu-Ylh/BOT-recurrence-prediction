@@ -24,8 +24,8 @@ st.set_page_config(page_title="BOT Recurrence Prediction", page_icon="🩺", lay
 st.title("🩺 BOT Recurrence Prediction Tool")
 st.markdown(
     """
-    Welcome to the **Pregnancy Outcome Prediction Tool**. 
-    This tool predicts the probability of pregnancy outcome based on clinical input variables. 
+    Welcome to the **BOT Recurrence Prediction Tool**. 
+    This tool predicts the probability of BOT Recurrence based on clinical input variables. 
     Please fill in the required inputs or upload a CSV file for batch predictions.
     """
 )
@@ -91,7 +91,7 @@ if st.button("Predict Single Case"):
     prob = predict_single(input_features)
     st.markdown("### 🧐 **Prediction Result**")
     st.markdown(
-        f"<h2 style='color:#FF6F61; text-align:center;'>**Predicted BOT recurrence Outcome Probability**: **{prob:.2f}**</h2>",
+        f"<h2 style='color:#FF6F61; text-align:center;'>**Predicted BOT recurrence Outcome Probability**: **{prob:.3f}**</h2>",
         unsafe_allow_html=True)
 
 # 批量预测
