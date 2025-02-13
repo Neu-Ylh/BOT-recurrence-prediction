@@ -65,7 +65,6 @@ titles_options = {
     "Ascites Cytology": {0: "Negative", 1: "Positive"},
     "FIGO Staging": {1: "Stage I", 2: "Stage II", 3: "Stage III", },
     "Unilateral or Bilateral": {0: "Unilateral", 1: "Bilateral"},
-    "Tumor Size": {0: "<7 cm", 1: "≥7 cm"},
     "CA125": {0: "Normal", 1: "Abnormal"},
     "CEA": {0: "Normal", 1: "Abnormal"},
     "CA199": {0: "Normal", 1: "Abnormal"},
