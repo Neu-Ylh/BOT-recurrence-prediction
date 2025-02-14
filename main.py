@@ -47,11 +47,11 @@ def add_input(title, options=None, is_int=False):
 titles_options = {
     "Parity": {0: "No", 1: "Yes"},
     "Menopausal Status": {0: "No", 1: "Yes"},
-    "Comorbidities": {0: "No", 1: "Yes"},
     "Fertility-Sparing Surgery": {0: "No", 1: "Yes"},
     "Completeness of Surgery": {0: "Incomplete", 1: "Complete"},
     "Omentectomy": {0: "No", 1: "Yes"},
     "Lymphadenectomy": {0: "No", 1: "Yes"},
+    "peritoneal implantation": {0: "No", 1: "Yes"},
     "Unilateral or Bilateral": {0: "Unilateral", 1: "Bilateral"},
 }
 input_features.append(add_input("Age", is_int=True))
