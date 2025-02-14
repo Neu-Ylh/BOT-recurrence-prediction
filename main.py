@@ -5,7 +5,11 @@ import joblib
 
 # 加载训练好的SVM模型
 model = joblib.load("RF_model.joblib")
-features_order = joblib.load('features_order.pkl')  # 加载特征顺序
+features_order = [
+    "Age", "Parity", "Menopausal Status", "Fertility-Sparing Surgery", 
+    "Completeness of Surgery", "Omentectomy", "Lymphadenectomy", 
+    "peritoneal implantation", "Unilateral or Bilateral"
+]
 
 # 单次预测
 def predict_single(data):
