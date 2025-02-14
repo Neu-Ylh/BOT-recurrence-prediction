@@ -9,7 +9,6 @@ model = joblib.load("RF_model.joblib")
 
 # 单次预测
 def predict_single(data):
-    data = np.array(data).reshape(1, -1)  # 确保输入是二维数组
     probability = model.predict_proba([data])[0, 1]  # 假设是二分类
     return probability
 
