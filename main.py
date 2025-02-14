@@ -54,9 +54,10 @@ titles_options = {
     "Lymphadenectomy": {0: "No", 1: "Yes"},
     "Unilateral or Bilateral": {0: "Unilateral", 1: "Bilateral"},
 }
+input_features.append(add_input("Age", is_int=True))
 for title, options in titles_options.items():
     input_features.append(add_input(title, options=options) if options else add_input(title, is_int=True))
-input_features.append(add_input("Age", is_int=True))
+
 
 # 单次预测
 st.subheader("🧪 Single Case Prediction")
