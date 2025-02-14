@@ -45,45 +45,17 @@ def add_input(title, options=None, is_int=False):
 
 # 定义输入变量
 titles_options = {
-    "Family Cancer History": {0: "No", 1: "Yes"},
-    "Sexual History": {0: "No", 1: "Yes"},
     "Parity": {0: "No", 1: "Yes"},
     "Menopausal Status": {0: "No", 1: "Yes"},
     "Comorbidities": {0: "No", 1: "Yes"},
-    "Presenting Symptom": {1: "Abdominal pain, bloating", 2: "Physical examination reveals", 3: "Abnormal bleeding, irregular bleeding"},
-    "Surgical Route": {0: "Laparotomy", 1: "Laparoscope"},
-    "Tumor Envelope Integrity": {0: "Intact", 1: "Ruptured"},
     "Fertility-Sparing Surgery": {0: "No", 1: "Yes"},
     "Completeness of Surgery": {0: "Incomplete", 1: "Complete"},
     "Omentectomy": {0: "No", 1: "Yes"},
     "Lymphadenectomy": {0: "No", 1: "Yes"},
-    "Histological Subtype": {0: "Serous", 1: "Mucinous", 2: "Seromucinous", 3: "Endometrioid", 4: "Clear Cell", 5: "Brenner Tumor"},
-    "Micropapillary": {0: "No", 1: "Yes"},
-    "Microinfiltration": {0: "No", 1: "Yes"},
-    "Psammoma Bodies and Calcification": {0: "No", 1: "Yes"},
-    "Peritoneal Implantation": {0: "No", 1: "Yes"},
-    "Ascites Cytology": {0: "Not found", 1: "Found"},
-    "FIGO Staging": {1: "Stage I", 2: "Stage II", 3: "Stage III", },
     "Unilateral or Bilateral": {0: "Unilateral", 1: "Bilateral"},
-    "CA125": {0: "Normal", 1: "Abnormal"},
-    "CEA": {0: "Normal", 1: "Abnormal"},
-    "CA199": {0: "Normal", 1: "Abnormal"},
-    "AFP": {0: "Normal", 1: "Abnormal"},
-    "CA724": {0: "Normal", 1: "Abnormal"},
-    "HE4": {0: "Normal", 1: "Abnormal"},
-    "Smoking and Drinking History": {0: "No", 1: "Yes"},
-    "Receive Estrogens": {0: "No", 1: "Yes"},
-    "Ovulation Induction": {0: "No", 1: "Yes"},
-    "Postoperative Adjuvant Therapy": {0: "No", 1: "Yes"},
-    "Type of Lesion": {0: "endogenous", 1: "exogenous"},
-    "Papillary Area Ratio": {0: "≤50%", 1: ">50%"}
 }
 
 input_features.append(add_input("Age", is_int=True))
-for title, options in titles_options.items():
-    input_features.append(add_input(title, options=options) if options else add_input(title, is_int=True))
-input_features.append(add_input("Tumor Size (cm)", is_int=False))
-input_features.append(add_input("Time (days)", is_int=True))
 
 # 单次预测
 st.subheader("🧪 Single Case Prediction")
