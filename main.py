@@ -5,11 +5,7 @@ import joblib
 
 # 加载训练好的SVM模型
 model = joblib.load("RF_model.joblib")
-features_order = [
-    "Age", "Parity", "Menopausal Status", "Fertility-Sparing Surgery", 
-    "Completeness of Surgery", "Omentectomy", "Lymphadenectomy", 
-    "peritoneal implantation", "Unilateral or Bilateral"
-]
+
 
 # 单次预测
 def predict_single(data):
@@ -22,10 +18,6 @@ def predict_single(data):
 def predict_batch(df):
     probabilities = model.predict_proba(df)[:, 1]
     return probabilities
-def add_input(title, options=None, is_int=False):
-    if options:
-        return st.sidebar.selectbox(title, options, format_func=lambda x: options[x])
-    return st.sidebar.number_input(title, value=0 if is_int else 0.0, format="%d" if is_int else "%.2f")
 
 # Streamlit UI 设置
 st.set_page_config(page_title="BOT Recurrence Prediction", page_icon="🩺", layout="wide")
