@@ -5,10 +5,11 @@ import joblib
 
 # 加载训练好的SVM模型
 model = joblib.load("RF_model.joblib")
-
+features_order = joblib.load('features_order.pkl')  # 加载特征顺序
 
 # 单次预测
 def predict_single(data):
+    data = np.array(data).reshape(1, -1)  # 确保输入是二维数组
     probability = model.predict_proba([data])[0, 1]  # 假设是二分类
     return probability
 
@@ -17,7 +18,10 @@ def predict_single(data):
 def predict_batch(df):
     probabilities = model.predict_proba(df)[:, 1]
     return probabilities
-
+def add_input(title, options=None, is_int=False):
+    if options:
+        return st.sidebar.selectbox(title, options, format_func=lambda x: options[x])
+    return st.sidebar.number_input(title, value=0 if is_int else 0.0, format="%d" if is_int else "%.2f")
 
 # Streamlit UI 设置
 st.set_page_config(page_title="BOT Recurrence Prediction", page_icon="🩺", layout="wide")
@@ -57,8 +61,6 @@ titles_options = {
 input_features.append(add_input("Age", is_int=True))
 for title, options in titles_options.items():
     input_features.append(add_input(title, options=options) if options else add_input(title, is_int=True))
-
-
 # 单次预测
 st.subheader("🧪 Single Case Prediction")
 if st.button("Predict Single Case"):
