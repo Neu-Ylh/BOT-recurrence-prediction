@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 
 # 加载训练好的SVM模型
-model = joblib.load("GB_model.joblib")
+model = joblib.load("RF_model.joblib")
 
 
 # 单次预测
